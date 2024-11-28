@@ -43,9 +43,10 @@ namespace infraedgeTest
             IWebElement TestDrivenTitle = driver.FindElements(By.ClassName(TitlesClass))
                 .First(e => e.FindElements(By.Id(TestDrivenTitleId)).Any());
 
-            string TestDrivenSectionText = TestDrivenTitle.FindElement(By.XPath(FollowingSiblingXpath)).Text;
+            string TestDrivenSectionText = TestDrivenTitleInner.Text + " " +
+                TestDrivenTitle.FindElement(By.XPath(FollowingSiblingXpath)).Text;
 
-            Dictionary<string, int> UniqueWords = GetUniqueWords(TestDrivenSectionText);
+            Dictionary<string, int> UniqueWords = utilityFunctions.GetUniqueWords(TestDrivenSectionText);
 
             //foreach (var item in UniqueWords)
             //{
@@ -60,21 +61,5 @@ namespace infraedgeTest
         {
             driver.Quit();
         }
-
-        private Dictionary<string, int> GetUniqueWords(string text)
-        {
-            text = Regex.Replace(text, @"[\(\[{<].*?[\)\]}>]", "");
-
-            IEnumerable<string> words = text
-                .ToLower()
-                .Split(new[] { ' ', '\n', '\r', '\t', ',', '.', '-', '[', ']' }, StringSplitOptions.RemoveEmptyEntries)
-                .Where(word => word.All(Char.IsLetter));
-
-            Dictionary<string, int> wordCount = words.GroupBy(word => word)
-                                 .ToDictionary(group => group.Key, group => group.Count());
-
-            return wordCount;
-        }
     }
-
 }
