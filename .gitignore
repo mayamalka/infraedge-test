@@ -1,0 +1,61 @@
+# User-specific files
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Auto-generated files
+*.vs/
+.vscode/
+bin/
+obj/
+
+# NUnit Test Result Files
+TestResult.xml
+*.trx
+
+# User-specific files (Visual Studio)
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Visual Studio Code settings
+.vscode/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Windows system files
+$RECYCLE.BIN/
+
+# macOS system files
+*.DS_Store
+
+# NuGet Packages
+*.nupkg
+*.snupkg
+
+# Compiled DLLs, EXEs, and other binaries
+*.dll
+*.exe
+*.pdb
+*.mdb
+
+# Logs and crash reports
+*.log
+*.dmp
+
+# Temporary files
+*.tmp
+*.cache
+*.bak
+*.swp
+
+# Selenium WebDriver executables
+chromedriver.exe
+
