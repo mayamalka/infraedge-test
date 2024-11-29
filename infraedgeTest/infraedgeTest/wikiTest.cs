@@ -48,12 +48,10 @@ namespace infraedgeTest
 
             Dictionary<string, int> UniqueWords = utilityFunctions.GetUniqueWords(TestDrivenSectionText);
 
-            //foreach (var item in UniqueWords)
-            //{
-            //    Console.Write(item.Key + " "); // Adjust formatting as needed
-            //}
-
-            Console.WriteLine(UniqueWords.Count);
+            foreach (KeyValuePair<string, int> UniqueWord in UniqueWords)
+            {
+                Console.WriteLine($"{UniqueWord.Key}: {UniqueWord.Value}");
+            }
         }
 
         [TearDown]
