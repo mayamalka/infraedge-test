@@ -32,6 +32,7 @@ namespace infraedgeTest
         }
 
         [Test]
+        [Description("this test checks the variety of words in the wikipedia page to ensure the text is accesible and coprehensive")]
         public void WikiUi()
         {
             IWebElement TestDrivenTitleInner = driver.FindElement(By.Id(TestDrivenTitleId));
